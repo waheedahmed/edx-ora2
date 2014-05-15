@@ -75,7 +75,7 @@ class StudentTrainingMixin(object):
         # shows as complete.
         # We're assuming here that the training step always precedes the other assessment steps
         # (peer/self) -- we may need to make this more flexible later.
-        if workflow_status in ['peer', 'self', 'waiting', 'done']:
+        if workflow_status and workflow_status != "training":
             template = 'openassessmentblock/student_training/student_training_complete.html'
 
         # If the problem is closed, then do not allow students to access the training step
